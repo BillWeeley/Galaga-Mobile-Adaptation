@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1850439826687512039}
   - component: {fileID: 7459611350053872594}
   - component: {fileID: -1974779187793071357}
-  - component: {fileID: 8463665354769443331}
   - component: {fileID: 1385979956250511963}
+  - component: {fileID: 1197387392631168941}
   m_Layer: 0
-  m_Name: PlayerProjectile
+  m_Name: EnemyProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,20 +114,6 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
---- !u!114 &8463665354769443331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4547349622247499419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a9ec6c2fcfb2b4baf9ebc8aa9aaa7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  moveSpeed: 10
 --- !u!50 &1385979956250511963
 Rigidbody2D:
   serializedVersion: 4
@@ -149,3 +135,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1197387392631168941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547349622247499419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa59d1ab46a15845b7a9aaeedf2eb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1385979956250511963}
+  moveSpeed: 10

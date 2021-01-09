@@ -8,6 +8,7 @@ public class DragFingerMove : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private float moveSpeed = 10f;
+    private Vector3 touchPosition;
 
     // Use this for initialization
     private void Start()
@@ -18,13 +19,10 @@ public class DragFingerMove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        /*if (Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
-            //Touch touch = Input.GetTouch(0);
-            if (Input.GetMouseButtonDown(0))
-            {
 
-            }
+            Touch touch = Input.GetTouch(0);
             touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
             touchPosition.z = 0;
             direction = (touchPosition - transform.position);
@@ -32,7 +30,7 @@ public class DragFingerMove : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended)
                 rb.velocity = Vector2.zero;
-        }*/
+        }
 
         if (Input.GetMouseButton(0))
         {

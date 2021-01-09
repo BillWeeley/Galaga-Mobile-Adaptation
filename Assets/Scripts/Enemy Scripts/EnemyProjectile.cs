@@ -24,12 +24,13 @@ public class EnemyProjectile : MonoBehaviour {
 		//when it hits the player
 		if (col.gameObject.tag == "Player") 
 		{
-			col.gameObject.SetActive (false);
+			HealthSystem.health -= 1;
+			Destroy(gameObject);
 		}
 		//when it hits the bottom of the screen
 		if (col.gameObject.name == "Bottom") 
 		{
-			DestroyObject (this.gameObject);
+			Destroy(gameObject);
 		}
 	}
 }
