@@ -22,7 +22,7 @@ public class MoveProjectile : MonoBehaviour
 	}
 
 	//add some hit detecion
-	void OnCollisionEnter2D(Collision2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
 		//when it hits an enemy...
 		if (col.gameObject.name == "Enemy")

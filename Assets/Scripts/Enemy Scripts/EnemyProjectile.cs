@@ -19,7 +19,7 @@ public class EnemyProjectile : MonoBehaviour {
 	}
 
 	//hit detection 
-	void OnCollisionEnter2D(Collision2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
 		//when it hits the player
 		if (col.gameObject.tag == "Player") 
