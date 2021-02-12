@@ -19,14 +19,25 @@ public class DragFingerMove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        float xpos;
+        float xposition;
+        
+       
+
         if (Input.touchCount > 0)
         {
 
             Touch touch = Input.GetTouch(0);
             touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
             touchPosition.z = 0;
-            direction = (touchPosition - transform.position);
-            rb.velocity = new Vector2(direction.x, direction.y) * moveSpeed;
+            xposition = touchPosition.x;
+            if (xposition < 5 && xposition > -5)
+            {
+                direction = (touchPosition - transform.position);
+                rb.velocity = new Vector2(direction.x, direction.y) * moveSpeed;
+            }
+
+            
 
             if (touch.phase == TouchPhase.Ended)
                 rb.velocity = Vector2.zero;
@@ -36,9 +47,18 @@ public class DragFingerMove : MonoBehaviour
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
-            direction = (mousePosition - transform.position);
-            rb.velocity = new Vector2(direction.x * moveSpeed, direction.y * moveSpeed);
+            xpos = mousePosition.x;
+
+            if (xpos < 5 && xpos > -5)
+            {
+
+                direction = (mousePosition - transform.position);
+                rb.velocity = new Vector2(direction.x * moveSpeed, direction.y * moveSpeed);
+
+            }
+            Debug.Log("Move");
         }
+
         else
         {
             rb.velocity = Vector2.zero;
